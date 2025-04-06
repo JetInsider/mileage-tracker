@@ -1,0 +1,193 @@
+:root{
+    --background-color: rgb(1, 6, 24);
+    --secondary-background-color: rgb(15, 24, 40);
+    --primary-element-color: rgb(5, 166, 246);
+    --secondary-element-color: rgb(0, 143, 214);
+    --text-color: white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.4s ease, color 0.1s ease;
+}
+
+.light-mode{
+    --background-color: rgb(255, 255, 255);
+    --secondary-background-color: rgb(225, 236, 255);
+    --primary-element-color: rgb(5, 166, 246);
+    --secondary-element-color: rgb(0, 143, 214);
+    --text-color: rgb(30, 30, 30);
+}
+
+body{
+    /* cursor: url(/assets/svg/cursor.svg), auto; */
+    font-family: "Boldonse", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    min-height: 100vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#navbar{
+    background-color: var(--secondary-background-color);
+    border-radius: 50%;
+    padding: 10px;
+    margin: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#theme-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#theme-btn svg:last-child{
+    display: none;
+}
+
+.light-mode #theme-btn svg:first-child{
+    display: none;
+}
+
+.light-mode #theme-btn svg:last-child{
+    display: block;
+}
+
+.light-mode #theme-btn svg{
+    fill: black;
+}
+
+h1{
+    cursor: default;
+    color: var(--text-color);
+    font-size: 3rem;
+    text-align: center;
+    margin: 50px auto;
+    min-width: 200px;
+    width: 50%;
+}
+
+#theme-btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.wrapper{
+    padding: 20px 10px;
+    width: 90%;
+    max-width: 500px;
+    margin: 10px auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary-background-color);
+}
+
+.wrapper input{
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 12px;
+    padding: 4px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#kmField{
+    display: flex;
+    justify-content: space-between;
+}
+
+#kmField input{
+    width: calc(50% - 5px);
+}
+
+#fuelField input{
+    width: 100%;
+}
+
+#addDataBtn{
+    display: block;
+    background-color: var(--primary-element-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    width: 120px;
+    height: 40px;
+    margin: 10px auto;
+    cursor: pointer;
+
+    &:hover{
+        background-color: var(--secondary-element-color);
+    }
+}
+
+#dataUL {
+    list-style: none;
+    width: 100%;
+}
+
+.dataLI {
+    box-sizing: border-box;
+    width: 90%;
+    background-color: var(--secondary-background-color);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.dataLI p{
+    font-size: 1.2rem;
+    font-family: "Arial", sans-serif;
+    font-weight: 500;
+}
+
+.dataLI span{
+    font-weight: 800;
+}
+
+@media (min-width: 947px) {
+    #dataUL{
+        width: 100%;
+    }
+
+    .dataLI{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 4rem;
+    }
+
+    .dataLI p{
+        min-width: 220px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .dataLI{
+        width: 90%;
+    }
+}
+
+@media (min-width: 1250px) {
+    .dataLI{
+        width: 80%;
+    }
+}
